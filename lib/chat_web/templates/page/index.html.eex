@@ -1,0 +1,11 @@
+<div class="app-container">
+  <div>
+  <h1>texto</h1>
+  </div>
+  <h3>send messages</h3>
+  <form id="message-form">
+    <label for="message">Message :</label>
+    <input type="text" id="message" name="message" /><br /><br />
+    <input id="send-message" type="submit" value="Submit" />
+  </form>
+</div>
