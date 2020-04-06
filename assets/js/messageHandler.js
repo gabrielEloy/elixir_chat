@@ -1,15 +1,3 @@
-// const messageInput = document.getElementById("message");
-// const submitButton = document.getElementById("send-message");
-
-// messageInput.addEventListener("keydown", e => {
-  
-// });
-
-// submitButton.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     console.log(messageInput.value)
-// })
-
 const messageHandler = {
     init(socket) {
         const channel = socket.channel('water_cooler:lobby', {})
@@ -28,7 +16,11 @@ const messageHandler = {
         })
 
         channel.on('shout', payload => {
-            console.log({payload})
+            const newMessage = document.createElement("div");
+            newMessage.className = "message-container";
+            newMessage.innerHTML = `<span>${payload.message}</span>`
+
+            document.getElementById('messages').appendChild(newMessage);
         })
     }
 };
